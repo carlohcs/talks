@@ -1,23 +1,37 @@
 # O VIM é seu amigo e não seu inimigo!
 
-Você sempre quis saber como sair do `VIM`? É fácil! Aperte os comandos `Esc + : + q`. Mas vai ficar só nisso? Vem conosco que é sucesso!
+Possívelmente, você possui essa concepção sobre o **VIM**:
 
-*Conteúdo baseado em: https://www.youtube.com/watch?v=UUzW46SeLhg*
+![Mólusco VIM](https://pics.onsizzle.com/just-memorize-these-fourteen-contextually-dependant-instructions-exiting-vim-eventually-3125824.png)
 
-## Público:
+Mas espere! O **VIM é seu amigo e não seu inimigo!** Ele não é esse monstro que todos pensam.
+
+Você sempre quis saber como sair do `VIM`? É fácil! Aperte os comandos `Esc + : + q`. 
+
+**Mas não fique apenas nisso! Vem comigo que é sucesso!**
+
+## Antes de começar... Créditos:
+
+O conteúdo dessa apresentação foi baseado no vídeo da apresentação de Magnun Leno, com o título de **"Grupylango - Vim - mais que um editor"** - URL:  [https://www.youtube.com/watch?v=UUzW46SeLhg](https://www.youtube.com/watch?v=UUzW46SeLhg
+).
+
+## Público
 
 - Desenvolvedores (frontend/backend)
 - QA's
-- Outros (todo mundo que quer aprender!)
+- e todo mundo que quer aprender! :)
 
-## Objetivo do workshop
+## Objetivo da apresentação/workshop
 
 - Acabar com a ideia "Everybody hates VIM";
 - Entender o seu "cerne" e design;
 - Acabar com o conceito de i\<digita digita digita>ESC:ws<ENTER>
-- Entender que o VIM é o editor DIY (Do It yourself - faça você mesmo);
-- Não tente absorver tudo!
-- VIM tem que estar nos músculos, e não na mente (a memória muscular)
+- Entender que o VIM é o editor DIY (Do It yourself - faça você mesmo).
+
+#### Dica importante:
+
+- **Não tente absorver tudo!**
+- O VIM tem que estar nos músculos e não na mente (a famosa memória muscular).
 
 ## Tempo previsto
 2 horas (reduzindo para 1:40)
@@ -31,39 +45,43 @@ Você sempre quis saber como sair do `VIM`? É fácil! Aperte os comandos `Esc +
 - Suporta inúmeras linguagens;
 - Customizável, extensível e escriptável;
 - Dependendo do caso, supera até editores atuais (Atom, I'm looking at you!);
-- Sem muitas dores nos braços! Ess lance de mouse + teclado complica. Quem nunca sentiu dor disso?
+- **Saúde:** Sem muitas dores nos braços! Esse lance de mouse + teclado complica. Quem nunca sentiu dor com isso?
 
 ## Um pouco de história
 
-- Existiam apenas computadores "centrais"
-- Eram utilizados "terminais burros"
-- Não era comum o uso de "monitores"
+- Existiam apenas computadores "centrais".
+- Eram utilizados "terminais burros".
+- Não era comum o uso de "monitores".
 - Os terminais eram lentos!
 - O "padrão" de comunicação era a TTY:
-  - O Teletypewriter ou Teleprinter (imagem!)
+  - O Teletypewriter ou Teleprinter - 
     [https://www.youtube.com/watch?v=MikoF6KZjm0](https://www.youtube.com/watch?v=MikoF6KZjm0)
-- **1971:** Ken Thompson cria "ed", um line editor
-  - Implementa o conceito de modos
-  - Quem?
-    - Co-Criador do Unix
-    - Co-criador da linguagem C
-- **1976:** Bill Joy cria "ex", outro line editor
+- **1971:** Ken Thompson cria "ed", um line editor.
+  - Implementa o conceito de modos.
+  - Quem é esse cara?
+    - Co-Criador do Unix;
+    - Co-criador da linguagem C.
+- **1976:** Bill Joy cria "ex", outro line editor.
   - Implementa os comandos mais conhecidos do vi
-  - Quem?
-    - Co-Criador do BSD-Unix
-    - Co-Criador da Sun Microsystems
+  - Quem é esse cara?
+    - Co-Criador do BSD-Unix;
+    - Co-Criador da Sun Microsystems.
   - Bill Joy implementa o comando `:visual` (`:vi`)
     - este modo possibilita abrir o arquivo na linha, e não ele inteiro
-- **1979:** a situação se inverte...
-- **1991:** Bram Moolenaar cria o VIM
+- **1979:** A situação se inverte...
+- **1991:** Bram Moolenaar cria o **VIM**.
 
-Vim - Modo Visual
+## Vim - Modo Visual
 
-- Aqui, chegamos no momento que não é possível mais voltar.
+**Aqui, chegamos no momento crucial da apresentação.**
 
-- Pílula Azul - você pode sair e desistir e pensar que tudo isso aqui foi um sonho.
+![Morfeu - Pílulas](http://img.hbdia.com/2014/02/morpheus.jpg)
 
-- Pílula vermelha - você pode entrar na toca do coelho, e conhecer uma gama de conteúdos incríveis.
+Ou seja...
+
+![Pílulas](http://static.wixstatic.com/media/b44ce6_0a4e3e97f7d6427c8993e0ec9bd10937.jpg)
+
+**Se você decidiu seguir adiante...Bora lá!**
 
 ## Breve explicações
 

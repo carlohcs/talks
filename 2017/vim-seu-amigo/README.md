@@ -217,12 +217,46 @@ Ex:
   - Ex:
     - 10 -> ctrl + a -> 11
 
-- Macros
+## Macros
 
 [https://www.youtube.com/watch?v=lXrymNTLKdo](https://www.youtube.com/watch?v=lXrymNTLKdo)
   - iniciando uma macro: qa
   - encerrando: q
   - executando: @a
+
+  - Possível utilizar macros dentro do find/replace
+
+Exemplo:
+
+**VIA REGEX**
+
+1 - :'<,'>s/^/INSERT INTO tabela values ('/g
+2 - :'<,'>s/,/', '/g
+3 - :'<,'>s/$/');/g
+
+**VIA MACRO**
+
+1 - qa
+2 - I + ' + f, + ' + esc +
+3 - ESC + q
+4- Find/replace
+  - :'<,'>normal @a
+
+1,Clim,Farraway,cfarraway0@topsy.com,Male,86.28.50.192
+2,Arin,Pearcey,apearcey1@weibo.com,Male,178.119.153.99
+3,Cy,Presdee,cpresdee2@elegantthemes.com,Male,147.175.212.225
+4,Laurella,Schooley,lschooley3@taobao.com,Female,110.152.166.113
+5,Estrellita,Will,ewill4@cam.ac.uk,Female,56.69.80.161
+6,Alla,Bram,abram5@businessweek.com,Female,100.181.82.82
+7,Goober,Kippins,gkippins6@cafepress.com,Male,2.90.155.178
+8,Rosalynd,Redmond,rredmond7@mapquest.com,Female,246.250.232.101
+9,Fernando,Chrichton,fchrichton8@sourceforge.net,Male,210.131.198.60
+10,Justin,Wadge,jwadge9@japanpost.jp,Male,109.43.189.59
+11,Arley,Carlin,acarlina@globo.com,Male,116.210.75.221
+12,Ara,Snow,asnowb@cnn.com,Female,49.227.7.53
+13,Paulette,Biasini,pbiasinic@free.fr,Female,79.189.158.25
+14,Janna,Lineham,jlinehamd@irs.gov,Female,215.136.168.18
+15,Deanna,Longman,dlongmane@vkontakte.ru,Female,194.194.252.34
 
 Incremento ( <Ctrl-a> ) e decremento ( <Ctrl-i> )
 Autocompletar palavra ( <ctrl-x><ctrl-n> )
@@ -231,6 +265,29 @@ Autocompletar Sistema de Arquivos ( <ctrl-x><ctrl-f> )
 Autocompletar dicionário ( <ctrl-x><ctrl-k> )
 
 Autocompletar: ctrl + p
+
+## Integração com o terminal
+
+*Como podemos ver o ip da máquina?*
+
+ESC + ':r! sudo ifconfig'
+
+ou
+
+// Mostra e retorna os dados para o VIM
+
+ESC + 'r!hostname -i'
+
+ou 
+
+// Só mostra
+
+ESC + '! cat /etc/hosts'
+
+## Registradores
+
+:reg
+
 
 ## Conteúdo Programático
 
@@ -255,3 +312,74 @@ Autocompletar: ctrl + p
 - *Ok, você me convenceu. Mas não tem uma IDE mais bonita/ou mais atualizada para mexer com o VIM não?* - **Visual Studio Code**: utilizando VIM dentro da IDE's atuais.
 
 - *Ok ok! Já me converti! Não tem uns links/materiais interessantes?!* - **Links úteis**: Continue no lado negro da força!
+
+## Recomendações
+
+### Fontes de aprendizado
+
+**Livros Gratuitos**
+- A Bite of VIM
+- VIM Cookbook
+- VIM Book
+
+**Livros Pagos**
+- Learing VI and VIM Editors
+- Hacking VIM
+- Pratical VIM
+
+**Vídeos**
+- VIMCasts
+- Derek Wyatt's Videos
+- VIMBits
+
+**Sites**
+- Vim Ninjas
+- USE VIM
+- VIM Bits
+- VIM Awsome
+- TIL VIM
+- r/vim
+- r/vimplugins
+- r/vim_magic
+- VIM | Stack Overflow
+
+.vimrc's
+
+### Plugins
+
+Não utilize plugins sem um sistema de plugins!
+
+- vundle
+- pathogen
+- neobundle
+- vim-plug
+
+**Úteis**
+
+- Airline
+- Emmet-vim
+- Syntastic
+- UltiSnips
+- YouCompleteMe
+- NERDTree
+- TagBar
+- GitGutter
+- Rainbow Parenthesis
+- Fugitive
+- Surround
+- Matchit
+- Lexima
+- Ctrl-P
+- EasyMotion
+- ZoomWin
+- ...
+
+### Games
+
+- Matrix
+- TeTrls
+- Sokoban
+- Rogue
+- Snake
+- HJKL
+- FlappyVird

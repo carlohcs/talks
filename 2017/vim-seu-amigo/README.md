@@ -242,6 +242,8 @@ Exemplo:
 4- Find/replace
   - :'<,'>normal @a
 
+Dados fakes - CSV https://www.mockaroo.com/
+
 1,Clim,Farraway,cfarraway0@topsy.com,Male,86.28.50.192
 2,Arin,Pearcey,apearcey1@weibo.com,Male,178.119.153.99
 3,Cy,Presdee,cpresdee2@elegantthemes.com,Male,147.175.212.225
@@ -342,6 +344,14 @@ ESC + '! cat /etc/hosts'
 - r/vimplugins
 - r/vim_magic
 - VIM | Stack Overflow
+
+https://code.google.com/archive/p/vimbook/downloads
+
+https://github.com/shinokada/vimnotes/wiki
+
+https://www.youtube.com/watch?v=aHm36-na4-4
+
+http://stevelosh.com/blog/2011/09/writing-vim-plugins/
 
 .vimrc's
 

@@ -6,7 +6,7 @@ Possívelmente, você possui essa concepção sobre o **VIM**:
 
 Mas espere! O **VIM é seu amigo e não seu inimigo!** Ele não é esse monstro que todos pensam.
 
-Você sempre quis saber como sair do `VIM`? É fácil! Aperte os comandos `Esc + : + q`. 
+Você sempre quis saber como sair do `VIM`? É fácil! Aperte os comandos `Esc` + `:` + `q`. 
 
 **Mas não fique apenas nisso! Vem comigo que é sucesso!**
 
@@ -89,11 +89,11 @@ Ou seja...
 
 - Comando
 - Inserção
+- Visual
 - Normal
 
-Mas...
+Entre outros (mas não iremos abordar)...
 
-- Visual
 - Select
 - Insert
 - Ex
@@ -104,37 +104,43 @@ Mas...
 - Insert Visual
 - Insert Select
 
-Por quê?
+Por quê desses modos?
   - Bill Joy programava em um ADM-3A terminal.
 
   ![ADM-3A](http://bytecollector.com/images/DSCF2916.JPG)
 
-  De onde vem a ideia de `H`, `J`, `K`, `L`
+  De onde vem a ideia de movimentção por `H`, `J`, `K`, `L`? 
+
  ![Olhe o teclado!](http://www.vintagecomputer.net/LSI/ADM3A/LSI_ADM3A_21818_keyboard.jpg)
 
-O botão ESC era no lugar do CAPS-LOCK!
+O botão `ESC` era no lugar do `CAPS-LOCK`!
 
-Por consequência ele é ergonômicamente correto!
-  - Keep yout damn hands in the home row
+**Por consequência ele é ergonômicamente correto!**
 
-## Itens-chave
+## Considerações dos modos
 
 - Modo normal: Ele é o gateway para todos os modos.
-
 - Modo de inserção é para pequenas incursões no código/texto.
 
 Exemplos de teclas que te levam para o modo de inserção:
-- `i` e `I`
-- `o` e `O`
-- `a` e `A`
-- `s` e `S`
-- `C`
+
+- `i` -> insere antes do cursor.
+- `I` -> insere no início da linha.
+- `o` -> insere uma linha abaixo.
+- `O` -> insere uma linha acima.
+- `a` -> insere após o cursor.
+- `A` -> insere no final da linha.
+- `s` -> remove o caractér do cursor e posiciona para escrita.
+- `S` -> apaga a linha corrente e posiciona para escrita.
+- `C` -> apaga conteúdo do cursor até o fim da linha.
 
 Teclas que te levam ao modo visual:
 
-- `v`, `V`, `Ctrl-v`
+- `v` -> seleciona a linha inteira andando com o cursor;
+- `V` -> seleciona a linha inteira, independentemente do andamento do cursor.
+- `Ctrl-v` -> Seleção de bloco -> ao você descer ou subir, dá preferência pela seleção de linhas por onde o cursor está.
 
-Telcas que te levam ao modo de comando:
+Teclas que te levam são gateways para os modos:
 
 - `:`
 
@@ -144,170 +150,108 @@ Qual tecla que te tira de qualquer modo?
 
 ## Movimentação
 
-ctrl + d - paginação pra baixo
+**Principais**
 
-ctrl + u - paginação pra cima
+- `gg` -> início do arquivo.
+- `G` -> fim do arquivo.
+- `:20` + `<ENTER>` ou `20g` -> pula para a linha.
+- `<ctrl-u>` -> Paginação para cima.
+- `<ctrl-d>` -> Paginação para baixo.
+- `w` -> Pula para o começo da palavra.
+- `e` -> Pula para o fim da palavra/próxima palavra.
+- `b` -> Pula para o começo para.
+- `0` ou `^` -> Pula para o inicio da linha. 
+- `$` -> Pula para o fim da linha.
 
-gg = início do arquivo
+**Outros**
 
-G = fim do arquivo
-
-:20 + ENTER ou 20g
-
-{} - Pular parágrafos
-
-() - Pular frases
-
-w e e - Pular palavras
-
--> # Se Movimentando no VIM <-
-
-Paginação *gg* e *G*
-
-Paginação *<ctrl-u>* e *<ctrl-d>*
-
-Ir diretamente para número de linha *<numer>G*
-
-Ir para porcentagem do arquivo *<numer>%*
-
-Parágrafos *{* e *}*
-
-Frases *(* e *)*
-
-Palavras *w*, *W*, *e*, *E*, *b*, *B* e etc
-
-Inicio e fim de linha *0*, *$* e *^*
-
-Centralizando *zb*, *zt*, *zz*
-
-Saltos na "página virtual" *H*, *m* e *L*
-
-Saltos entre classes *[[*, *]]*
-
-Saltos entre métodos *[m*, *]m*
-
-Entre pares *%*
-
-Achar par não "casado" \[(, \[{
-
-Última inserção *gi*
-
-Último salto *<Ctrl-o>* e *<ctrl-i>*
-
-gi - Último item que estava sendo inserido
-
-Infinitas mais... *:help cursor-motions*
+- `{` -> pula para o parágrafo acima.
+- `}` -> Pula para o parágrafo abaixo.
+- `(` -> pula para a frase acima.
+- `)` -> pula para a frase abaixo.
+- Ir para porcentagem do arquivo *<numer>%*
+- Palavras *w*, *W*, *e*, *E*, *b*, *B* e etc
+- Centralizando *zb*, *zt*, *zz*
+- Saltos na "página virtual" *H*, *m* e *L*
+- Saltos entre classes *[[*, *]]*
+- Saltos entre métodos *[m*, *]m*
+- Entre pares *%*
+- Achar par não "casado" \[(, \[{
+- Última inserção *gi*
+- Último salto *<Ctrl-o>* e *<ctrl-i>*
+- gi - Último item que estava sendo inserido
+- Infinitas mais... *:help cursor-motions*
 
 ## Conversando com o VIM
 
-Similidade com a linguagem escrita
+Similidade com a linguagem escrita:
 
 - Verbos, substantivos, adjetivos, quantitativos...
 
 <quantitativo><verbo><substantivo><adjetivo>
 
-Ex:
+Exemplos:
 
-- Apague a palavra ( `dw` )
-- apague ao redor chaves ( `da}` )
-- 3 vezes apague a palavra ( `3dw` )
-- apague até > ( `dt>` )
-- apague conteúdo de parênteses > ( `di)` )
-- mude dentro da tag ( `cit` ) !!! // ci} / cit] ci' ci"
+- Apague a palavra ( `dw` ).
+- apague ao redor chaves ( `da}` ).
+- 3 vezes apague a palavra ( `3dw` ).
+- apague até > ( `dt>` ).
+- apague conteúdo de parênteses > ( `di)` ).
+- mude dentro da tag ( `cit` ) !!! // ci} / cit] ci' ci".
+
+### Helpers
+
 - encontrar item na linha:
-  - f + conteúdo a procurar na linha
-
+  - f + conteúdo a procurar na linha.
+- Incremento ( <Ctrl-a> ) e decremento ( <Ctrl-i> )
+  - Ex:
+    - 10 -> `<ctrl-a>` -> 11
+- `<ctrl-x><ctrl-n>` -> Autocompletar palavra.
+- `<ctrl-x><ctrl-l>` -> Autocompletar linha.
+- `<ctrl-x><ctrl-f>` -> Autocompleta com o istema de arquivos.
+- `<ctrl-x><ctrl-k>` -> Autocompleta com o dicionário.
+- `<ctrl-p>` -> Autocompleta o texto.
 - Modo replace:
   - r + nova letra
   - R sobrescreve texto da linha
-
-- Y - copia a linha inteira
-- y copia tudo 
-
-- u desfaz alterações
-- ctrl + r - refaz alterações
-
-- J - mescla linhas ( útil em listas variáveis por exemplo)
-- V - seleciona a linha inteira
-- % - match com elementos
-
-- incremento:
-  - Ex:
-    - 10 -> ctrl + a -> 11
+- `Y` -> copia a linha inteira
+- `y` -> copia tudo.
+- `u` -> desfaz alterações.
+- `<ctrl-r>` -> refaz alterações.
+- `J` -> mescla linhas ( útil em listas variáveis por exemplo)
+- `V` -> seleciona a linha inteira
+- `%` -> match com elementos
 
 ## Macros
 
-[https://www.youtube.com/watch?v=lXrymNTLKdo](https://www.youtube.com/watch?v=lXrymNTLKdo)
-  - iniciando uma macro: qa
-  - encerrando: q
-  - executando: @a
+Vídeo simples de entendimento: [https://www.youtube.com/watch?v=lXrymNTLKdo](https://www.youtube.com/watch?v=lXrymNTLKdo)
 
-  - Possível utilizar macros dentro do find/replace
-
-Exemplo:
-
-**VIA REGEX**
-
-1 - :'<,'>s/^/INSERT INTO tabela values ('/g
-2 - :'<,'>s/,/', '/g
-3 - :'<,'>s/$/');/g
-
-**VIA MACRO**
-
-1 - qa
-2 - I + ' + f, + ' + esc +
-3 - ESC + q
-4- Find/replace
-  - :'<,'>normal @a
-
-Dados fakes - CSV https://www.mockaroo.com/
-
-1,Clim,Farraway,cfarraway0@topsy.com,Male,86.28.50.192
-2,Arin,Pearcey,apearcey1@weibo.com,Male,178.119.153.99
-3,Cy,Presdee,cpresdee2@elegantthemes.com,Male,147.175.212.225
-4,Laurella,Schooley,lschooley3@taobao.com,Female,110.152.166.113
-5,Estrellita,Will,ewill4@cam.ac.uk,Female,56.69.80.161
-6,Alla,Bram,abram5@businessweek.com,Female,100.181.82.82
-7,Goober,Kippins,gkippins6@cafepress.com,Male,2.90.155.178
-8,Rosalynd,Redmond,rredmond7@mapquest.com,Female,246.250.232.101
-9,Fernando,Chrichton,fchrichton8@sourceforge.net,Male,210.131.198.60
-10,Justin,Wadge,jwadge9@japanpost.jp,Male,109.43.189.59
-11,Arley,Carlin,acarlina@globo.com,Male,116.210.75.221
-12,Ara,Snow,asnowb@cnn.com,Female,49.227.7.53
-13,Paulette,Biasini,pbiasinic@free.fr,Female,79.189.158.25
-14,Janna,Lineham,jlinehamd@irs.gov,Female,215.136.168.18
-15,Deanna,Longman,dlongmane@vkontakte.ru,Female,194.194.252.34
-
-Incremento ( <Ctrl-a> ) e decremento ( <Ctrl-i> )
-Autocompletar palavra ( <ctrl-x><ctrl-n> )
-Autocompletar linha ( <ctrl-x><ctrl-l> )
-Autocompletar Sistema de Arquivos ( <ctrl-x><ctrl-f> )
-Autocompletar dicionário ( <ctrl-x><ctrl-k> )
-
-Autocompletar: ctrl + p
+- Iniciando uma macro: qa
+- Encerrando: q
+- Executando: @a
+- Possível utilizar macros dentro do find/replace
+- [Exemplo](./content/exemplo_macro_regex.md)
 
 ## Integração com o terminal
 
-*Como podemos ver o ip da máquina?*
+**Exemplos:**
 
-ESC + ':r! sudo ifconfig'
+- **Pegar as configurações da placa de rede da máquina?**
+ - `<ESC>` + `:r! sudo ifconfig`
 
 ou
 
-// Mostra e retorna os dados para o VIM
-
-ESC + 'r!hostname -i'
+- **Pega o hostname e retorna para o VIM:**
+ - `<ESC>` + `r!hostname -i`
 
 ou 
 
-// Só mostra
-
-ESC + '! cat /etc/hosts'
+- **Só mostra o conteúdo:**
+ - `<ESC>` + `! cat /etc/hosts`
 
 ## Registradores
 
-:reg
-
+`:reg`
 
 ## Conteúdo Programático
 
@@ -335,8 +279,6 @@ ESC + '! cat /etc/hosts'
 
 ## Recomendações
 
-### Fontes de aprendizado
-
 **Livros Gratuitos**
 - A Bite of VIM
 - VIM Cookbook
@@ -353,15 +295,15 @@ ESC + '! cat /etc/hosts'
 - VIMBits
 
 **Sites**
-- Vim Ninjas
-- USE VIM
-- VIM Bits
-- VIM Awsome
-- TIL VIM
-- r/vim
-- r/vimplugins
-- r/vim_magic
-- VIM | Stack Overflow
+- [Vim Ninjas](http://www.vimninjas.com/)
+- [USE VIM](https://medium.com/usevim)
+- [VIM Bits](https://github.com/kkuchta/Vimbits)
+- [VIM Awesome](http://vimawesome.com/)
+- [TIL VIM](http://tilvim.com/)
+- [r/vim](https://www.reddit.com/r/vim/)
+- [r/vimplugins](https://www.reddit.com/r/vimplugins/)
+- [r/vim_magic](https://www.reddit.com/r/vim_magic/)
+- [VIM | Stack Overflow](https://stackoverflow.com/questions/tagged/vim)
 
 https://code.google.com/archive/p/vimbook/downloads
 
@@ -375,12 +317,12 @@ http://stevelosh.com/blog/2011/09/writing-vim-plugins/
 
 ### Plugins
 
-Não utilize plugins sem um sistema de plugins!
+**Recomendação:** Não utilize plugins sem um sistema de plugins!
 
-- vundle
-- pathogen
-- neobundle
-- vim-plug
+- [Vundle](https://github.com/VundleVim/Vundle.vim)
+- [Pathogen](https://github.com/tpope/vim-pathogen)
+- [Neobundle](https://github.com/Shougo/neobundle.vim)
+- [Vim-plug](https://github.com/junegunn/vim-plug)
 
 **Úteis**
 
@@ -404,10 +346,10 @@ Não utilize plugins sem um sistema de plugins!
 
 ### Games
 
-- Matrix
-- TeTrls
-- Sokoban
-- Rogue
-- Snake
-- HJKL
-- FlappyVird
+- [VIM Adventures](https://vim-adventures.com/) (educacional)
+- [Matrix](https://github.com/uguu-org/vim-matrix-screensaver)
+- [Sokoban](https://github.com/vim-scripts/sokoban.vim) (Jogo de empurrar caixas)
+- [Snake](http://www.vimsnake.com/)
+- [HJKL](https://github.com/vim-scripts/HJKL) (estilo pacman)
+- [FlappyVird](https://github.com/mattn/flappyvird-vim) (na minha máquina não rolou)
+- [...](http://www.zillions-of-games.com/Vim.html)

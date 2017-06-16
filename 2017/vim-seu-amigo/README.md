@@ -28,20 +28,34 @@ O conteúdo dessa apresentação foi baseado no vídeo da apresentação de Magn
 - Acabar com o conceito de i\<digita digita digita>ESC:ws<ENTER>
 - Entender que o VIM é o editor DIY (Do It yourself - faça você mesmo).
 
-#### Dica importante:
+#### Dicas importantes:
 
 - **Não tente absorver tudo!**
-- O VIM tem que estar nos músculos e não na mente (a famosa memória muscular).
+- O VIM tem que estar mais presente nos músculos do que na mente (vamos exercitar a famosa memória muscular!).
 
 ## Tempo previsto
 2 horas (reduzindo para 1:40)
+
+## Conteúdo Programático
+
+- Motivos para usar o VIM
+- Um pouco de história...
+- Momento de decisão!
+- Breves explicações
+- Considerações dos modos
+- Movimentação
+- Conversando com o VIM
+- Macros
+- Integração com o terminal
+- Recomendações
+  - Plugins
+  - Games
 
 ## Motivos para usar o VIM
 
 - Onipresente;
 - Não exige ambiente gráfico;
 - É leve;
-- É oldschool (tentar entender depois);
 - Suporta inúmeras linguagens;
 - Customizável, extensível e escriptável;
 - Dependendo do caso, supera até editores atuais (Atom, I'm looking at you!);
@@ -71,9 +85,9 @@ O conteúdo dessa apresentação foi baseado no vídeo da apresentação de Magn
 - **1979:** A situação se inverte...
 - **1991:** Bram Moolenaar cria o **VIM**.
 
-## Vim - Modo Visual
+## Vim - (Vi Improved)
 
-**Aqui, chegamos no momento crucial da apresentação.**
+**Aqui, chegamos no momento crucial da apresentação!**
 
 ![Morfeu - Pílulas](http://img.hbdia.com/2014/02/morpheus.jpg)
 
@@ -157,6 +171,7 @@ Qual tecla que te tira de qualquer modo?
 - `:20` + `<ENTER>` ou `20g` -> pula para a linha.
 - `<ctrl-u>` -> Paginação para cima.
 - `<ctrl-d>` -> Paginação para baixo.
+- Palavras *w*, *W*, *e*, *E*, *b*, *B* e etc
 - `w` -> Pula para o começo da palavra.
 - `e` -> Pula para o fim da palavra/próxima palavra.
 - `b` -> Pula para o começo para.
@@ -169,18 +184,17 @@ Qual tecla que te tira de qualquer modo?
 - `}` -> Pula para o parágrafo abaixo.
 - `(` -> pula para a frase acima.
 - `)` -> pula para a frase abaixo.
-- Ir para porcentagem do arquivo *<numer>%*
-- Palavras *w*, *W*, *e*, *E*, *b*, *B* e etc
-- Centralizando *zb*, *zt*, *zz*
-- Saltos na "página virtual" *H*, *m* e *L*
-- Saltos entre classes *[[*, *]]*
-- Saltos entre métodos *[m*, *]m*
-- Entre pares *%*
-- Achar par não "casado" \[(, \[{
-- Última inserção *gi*
-- Último salto *<Ctrl-o>* e *<ctrl-i>*
+- Ir para porcentagem do arquivo `<número>%`
+- Centralizando `zb`, `zt`, `zz`
+- Saltos na "página virtual" `H`, `m` e `L`
+- Saltos entre classes `[[`, `]]`
+- Saltos entre métodos `[m`, `]m`
+- Entre pares -> `%`
+- Achar par não "casado" `\[(`, `\[{`
+- Última inserção -> `gi`
+- Último salto `<ctrl-o>` e `<ctrl-i>`
 - gi - Último item que estava sendo inserido
-- Infinitas mais... *:help cursor-motions*
+- Infinitas mais... Para isso: `:help cursor-motions`
 
 ## Conversando com o VIM
 
@@ -188,7 +202,7 @@ Similidade com a linguagem escrita:
 
 - Verbos, substantivos, adjetivos, quantitativos...
 
-<quantitativo><verbo><substantivo><adjetivo>
+`<quantitativo><verbo><substantivo><adjetivo>`
 
 Exemplos:
 
@@ -201,9 +215,9 @@ Exemplos:
 
 ### Helpers
 
-- encontrar item na linha:
-  - f + conteúdo a procurar na linha.
-- Incremento ( <Ctrl-a> ) e decremento ( <Ctrl-i> )
+- Encontrar item na linha:
+  - `f` + conteúdo a procurar na linha.
+- Incremento ( `<ctrl-a>` ) e decremento ( `<ctrl-i>` )
   - Ex:
     - 10 -> `<ctrl-a>` -> 11
 - `<ctrl-x><ctrl-n>` -> Autocompletar palavra.
@@ -212,13 +226,13 @@ Exemplos:
 - `<ctrl-x><ctrl-k>` -> Autocompleta com o dicionário.
 - `<ctrl-p>` -> Autocompleta o texto.
 - Modo replace:
-  - r + nova letra
-  - R sobrescreve texto da linha
+  - `r` + nova letra
+  - `R` sobrescreve texto da linha
 - `Y` -> copia a linha inteira
 - `y` -> copia tudo.
 - `u` -> desfaz alterações.
 - `<ctrl-r>` -> refaz alterações.
-- `J` -> mescla linhas ( útil em listas variáveis por exemplo)
+- `J` -> mescla linhas (útil em listas variáveis por exemplo)
 - `V` -> seleciona a linha inteira
 - `%` -> match com elementos
 
@@ -236,12 +250,12 @@ Vídeo simples de entendimento: [https://www.youtube.com/watch?v=lXrymNTLKdo](ht
 
 **Exemplos:**
 
-- **Pegar as configurações da placa de rede da máquina?**
+- **Como pegar as configurações da placa de rede da máquina?**
  - `<ESC>` + `:r! sudo ifconfig`
 
 ou
 
-- **Pega o hostname e retorna para o VIM:**
+- **Como pegar o hostname e retorna para o VIM?**
  - `<ESC>` + `r!hostname -i`
 
 ou 
@@ -253,46 +267,22 @@ ou
 
 `:reg`
 
-## Conteúdo Programático
-
-- *Como escreve nessa tela preta?!* - `Esc + i`: Transcrevendo o mussum ipsum.
-
-- *Putz, sem usar o mouse? Como vejo o resto do texto?!* - **Movimentação**: Movendo-se pelo documento.
-
-- *Alterar palavras deve ser um sufoco!* - **Find/Replace**: Alterando palavras com poucos comandos.
-
-- *Ah meu, não tem uns recursos legais pra melhorar isso aqui não?* - **Plugins:** Deixando o VIM mais poderoso e divertido!
-
-  - *Não tem como eu ver uma lista de arquivos dentro de uma pasta?* - **NERDTree**: a sua resposta para árvores de arquivos.
-
-  - *Poxa, umas abas aqui seria uma boa ehin?* - `Esc + :tabnew`
-  
-  - *E se eu quiser `splitar` (dividir) a tela, nem tem como né?* - `Esc + :vsp`: divida a tela em quantas partes quiser!
-
-  - *Não tem umas cores/uns temas para isso aqui não?* - **Instalando temas**
-
-- *Tá, aprendi bastante, mas como salva esse trem?!* - **Salvar:** Guardando seus dados em sua máquina.
-
-- *Ok, você me convenceu. Mas não tem uma IDE mais bonita/ou mais atualizada para mexer com o VIM não?* - **Visual Studio Code**: utilizando VIM dentro da IDE's atuais.
-
-- *Ok ok! Já me converti! Não tem uns links/materiais interessantes?!* - **Links úteis**: Continue no lado negro da força!
-
 ## Recomendações
 
 **Livros Gratuitos**
-- A Bite of VIM
-- VIM Cookbook
-- VIM Book
+- [A Bite of VIM](https://vim.swaroopch.com/)
+- [VIM Cookbook](http://www.oualline.com/vim-cook.html)
+- [VIM Book](https://github.com/cassiobotaro/vimbook)
 
 **Livros Pagos**
-- Learing VI and VIM Editors
-- Hacking VIM
-- Pratical VIM
+- [Learning the VI and VIM Editors](https://www.amazon.com/Learning-Vim-Editors-Processing-Maximum/dp/059652983X)
+- [Hacking VIM](https://www.amazon.com/Hacking-Vim-7-2-Kim-Schulz/dp/1849510504)
+- [Pratical VIM](https://pragprog.com/book/dnvim2/practical-vim-second-edition)
 
 **Vídeos**
-- VIMCasts
-- Derek Wyatt's Videos
-- VIMBits
+- [VIMCasts](http://vimcasts.org/)
+- [Derek Wyatt's Videos](http://derekwyatt.org/vim/tutorials/)
+- [Damian Conway, "More Instantly Better Vim" - OSCON 2013](https://www.youtube.com/watch?v=aHm36-na4-4)
 
 **Sites**
 - [Vim Ninjas](http://www.vimninjas.com/)
@@ -304,16 +294,14 @@ ou
 - [r/vimplugins](https://www.reddit.com/r/vimplugins/)
 - [r/vim_magic](https://www.reddit.com/r/vim_magic/)
 - [VIM | Stack Overflow](https://stackoverflow.com/questions/tagged/vim)
+- [Writing vim plugins](http://stevelosh.com/blog/2011/09/writing-vim-plugins/
+)
 
-https://code.google.com/archive/p/vimbook/downloads
+**Super úteis:**
 
-https://github.com/shinokada/vimnotes/wiki
+- [VIM Notes Wiki](https://github.com/shinokada/vimnotes/wiki)
 
-https://www.youtube.com/watch?v=aHm36-na4-4
-
-http://stevelosh.com/blog/2011/09/writing-vim-plugins/
-
-.vimrc's
+Veja arquivos .vimrc's de outras pessoas!
 
 ### Plugins
 
@@ -326,22 +314,43 @@ http://stevelosh.com/blog/2011/09/writing-vim-plugins/
 
 **Úteis**
 
-- Airline
-- Emmet-vim
-- Syntastic
-- UltiSnips
-- YouCompleteMe
-- NERDTree
-- TagBar
-- GitGutter
-- Rainbow Parenthesis
-- Fugitive
-- Surround
-- Matchit
-- Lexima
-- Ctrl-P
-- EasyMotion
-- ZoomWin
+Centralizador de plugins: [http://vimawesome.com/](http://vimawesome.com/)
+
+- [Airline](http://vimawesome.com/plugin/vim-airline)
+
+![VIM Airline](https://github.com/vim-airline/vim-airline/wiki/screenshots/demo.gif)
+
+- [Emmet-vim](http://vimawesome.com/plugin/emmet-vim)
+
+![Emmet-vim](https://raw.githubusercontent.com/mattn/emmet-vim/master/doc/screenshot.gif)
+
+- [YouCompleteMe](http://vimawesome.com/plugin/youcompleteme)
+
+![YouCompleteMe](http://i.imgur.com/0OP4ood.gif)
+
+- [NERDTree](http://vimawesome.com/plugin/nerdtree-red)
+
+![NERDTree](https://camo.githubusercontent.com/3fe0388df11cb787f36e1fa108398fd3f757eef4/687474703a2f2f692e696d6775722e636f6d2f6a534377476a552e6769663f31)
+- [TagBar](http://vimawesome.com/plugin/tagbar)
+
+![tagbar](https://i.imgur.com/Sf9Ls2r.png)
+- [GitGutter](http://vimawesome.com/plugin/vim-gitgutter)
+
+
+![GitGutter](https://raw.github.com/airblade/vim-gitgutter/master/screenshot.png)
+
+- [Multiple Cursors](http://vimawesome.com/plugin/vim-multiple-cursors)
+
+![Multiple Cursors](https://github.com/terryma/vim-multiple-cursors/raw/master/assets/example1.gif?raw=true)
+
+- [Ctrl-P](http://vimawesome.com/plugin/ctrlp-vim-everything-has-changed)
+
+![Ctrl-P](http://i.imgur.com/aOcwHwt.png)
+
+- [EasyMotion](http://vimawesome.com/plugin/easymotion)
+
+![EasyMotion](https://raw.githubusercontent.com/haya14busa/i/2753bd4dd1dfdf5962dbdbffabf24244e4e14243/easymotion/overwin-motions.gif)
+ - [AutoPairs](http://vimawesome.com/plugin/auto-pairs) - Insere aspas, colchetes, chaves automaticamente.
 - ...
 
 ### Games
